@@ -80,12 +80,6 @@
     .hero-body { font-size: 15px; line-height: 1.8; color: rgba(240,244,255,0.7); max-width: 560px; margin-bottom: 2rem; }
     .hero-body strong { color: rgba(240,244,255,0.95); font-weight: 400; }
 
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.25rem; }
-    .chip { font-size: 12px; padding: 5px 14px; border-radius: 100px; border: 0.5px solid rgba(255,255,255,0.1); color: rgba(240,244,255,0.5); }
-    .chip.ac { color: #93c5f0; border-color: var(--blue-mid); background: var(--blue-light); }
-
-    .scroll-cue { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(240,244,255,0.35); padding-top: 1.5rem; border-top: 0.5px solid rgba(255,255,255,0.07); }
-
     /* ── FORM AREA ── */
     .form-area { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
     .form-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
@@ -97,17 +91,12 @@
 
     .field { margin-bottom: 1.1rem; }
     .field label { display: block; font-size: 13px; color: #374151; margin-bottom: 6px; line-height: 1.5; }
-    .field label .req { color: #D85A30; margin-left: 2px; }
 
-    .field input[type="text"], .field input[type="date"], .field textarea {
-      width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none;
+    .field textarea {
+      width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none; resize: vertical; min-height: 82px; line-height: 1.6;
     }
-    .field textarea { resize: vertical; min-height: 82px; line-height: 1.6; }
-    .field input:focus, .field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(55,138,221,0.1); background: #fff; }
+    .field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(55,138,221,0.1); background: #fff; }
 
-    .hint { font-size: 11px; color: #9ca3af; margin-top: 4px; }
-
-    /* Botão de Enviar */
     .btn-submit {
       display: block; width: 100%; padding: 14px; font-size: 15px; font-family: 'Syne', sans-serif; font-weight: 700; color: #fff; background: var(--blue); border: none; border-radius: 10px; cursor: pointer; text-align: center; margin-top: 2rem; transition: background 0.2s;
     }
@@ -139,17 +128,6 @@
   <form action="https://formspree.io/f/xpqezggg" method="POST">
 
     <div class="card">
-      <span class="sec-label">Dados básicos</span>
-      <div class="sec-title">Identificação da entrevista</div>
-      <div class="field"><label>Data da entrevista <span class="req">*</span></label><input type="date" name="data_entrevista" required /></div>
-      <div class="field"><label>Nome do entrevistado <span class="req">*</span></label><input type="text" name="nome_entrevistado" placeholder="Nome completo" required /></div>
-      <div class="field"><label>Cargo / função atual <span class="req">*</span></label><input type="text" name="cargo" placeholder="Ex: Cloud Engineer..." required /></div>
-      <div class="field"><label>Empresa</label><input type="text" name="empresa" placeholder="Opcional" /></div>
-      <div class="field"><label>Tempo de atuação na área</label><input type="text" name="tempo_area" placeholder="Ex: 5 anos" /></div>
-      <div class="field"><label>Principal plataforma cloud utilizada</label><input type="text" name="plataforma" placeholder="AWS, Azure, GCP..." /></div>
-    </div>
-
-    <div class="card">
       <span class="sec-label">Bloco 1</span>
       <div class="sec-title">Trajetória e área de atuação</div>
       <div class="field"><label>1. Como você chegou até a área de cloud?</label><textarea name="pergunta_1" placeholder="Resposta…"></textarea></div>
@@ -177,9 +155,9 @@
     <div class="card">
       <span class="sec-label">Bloco 4</span>
       <div class="sec-title">Futuro e conselhos</div>
-      <div class="field"><label>11. Para onde acha que cloud está indo nos próximos anos?</label><textarea name="pergunta_11" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>12. Se pudesse voltar ao início da carreira, o que faria diferente?</label><textarea name="pergunta_12" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>13. Que conselho daria para um estudante de Ciência da Computação?</label><textarea name="pergunta_13" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>11. Para onde acha que cloud está indo nos próximos anos?</label><textarea name="pergunta_12" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>12. Se pudesse voltar ao início da carreira, o que faria diferente?</label><textarea name="pergunta_13" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>13. Que conselho daria para um estudante de Ciência da Computação?</label><textarea name="pergunta_14" placeholder="Resposta…"></textarea></div>
     </div>
 
     <button type="submit" class="btn-submit">Enviar Respostas para o Lucas</button>
