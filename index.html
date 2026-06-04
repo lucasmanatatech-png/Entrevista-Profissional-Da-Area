@@ -92,6 +92,14 @@
     .field { margin-bottom: 1.1rem; }
     .field label { display: block; font-size: 13px; color: #374151; margin-bottom: 6px; line-height: 1.5; }
 
+    /* Estilos para inputs de linha única (texto e data) */
+    .field input[type="text"],
+    .field input[type="date"] {
+      width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none; line-height: 1.6;
+    }
+    .field input[type="text"]:focus,
+    .field input[type="date"]:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(55,138,221,0.1); background: #fff; }
+
     .field textarea {
       width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none; resize: vertical; min-height: 82px; line-height: 1.6;
     }
@@ -126,6 +134,14 @@
   <p class="form-subtitle">Profissional de cloud computing · Trabalho acadêmico · PUC Minas</p>
 
   <form action="https://formspree.io/f/xpqezggg" method="POST">
+
+    <div class="card">
+      <span class="sec-label">Identificação</span>
+      <div class="sec-title">Dados do Entrevistado e da Entrevista</div>
+      <div class="field"><label>Nome do entrevistado:</label><input type="text" name="nome_entrevistado" placeholder="Ex: João Silva" required /></div>
+      <div class="field"><label>Perfil do LinkedIn ou GitHub:</label><input type="text" name="perfil_profissional" placeholder="Ex: linkedin.com/in/usuario" required /></div>
+      <div class="field"><label>Data da entrevista:</label><input type="date" name="data_entrevista" required /></div>
+    </div>
 
     <div class="card">
       <span class="sec-label">Bloco 1</span>
