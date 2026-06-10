@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --blue: #378ADD;
       --blue-light: rgba(55,138,221,0.12);
@@ -22,94 +21,34 @@
       --muted: #6b7280;
       --border: #e2e5eb;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--form-bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--dark);
-      color: #f0f4ff;
-      padding: 4rem 2rem 3.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
+    body { font-family: 'DM Sans', sans-serif; background: var(--form-bg); color: var(--text); min-height: 100vh; }
+    .hero { background: var(--dark); color: #f0f4ff; padding: 4rem 2rem 3.5rem; position: relative; overflow: hidden; }
     .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
-
-    .grid-bg {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(55,138,221,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(55,138,221,0.06) 1px, transparent 1px);
-      background-size: 44px 44px;
-    }
-
-    .badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--blue); border: 0.5px solid var(--blue-mid);
-      background: var(--blue-light);
-      padding: 5px 14px; border-radius: 100px; margin-bottom: 1.5rem;
-    }
+    .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(55,138,221,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(55,138,221,0.06) 1px, transparent 1px); background-size: 44px 44px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); border: 0.5px solid var(--blue-mid); background: var(--blue-light); padding: 5px 14px; border-radius: 100px; margin-bottom: 1.5rem; }
     .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
-
-    .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(36px, 6vw, 56px);
-      font-weight: 800; line-height: 1.05;
-      color: #f5f8ff; margin-bottom: 6px;
-    }
+    .hero-name { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 56px); font-weight: 800; line-height: 1.05; color: #f5f8ff; margin-bottom: 6px; }
     .hero-name span { color: var(--blue); }
-
-    .hero-sub {
-      font-size: 14px; font-weight: 300;
-      color: rgba(240,244,255,0.45);
-      margin-bottom: 2rem;
-    }
+    .hero-sub { font-size: 14px; font-weight: 300; color: rgba(240,244,255,0.45); margin-bottom: 2rem; }
     .hero-sub strong { color: rgba(240,244,255,0.65); font-weight: 400; }
-
     .hero-divider { width: 52px; height: 2px; background: var(--blue); margin-bottom: 1.75rem; }
-
     .hero-body { font-size: 15px; line-height: 1.8; color: rgba(240,244,255,0.7); max-width: 560px; margin-bottom: 2rem; }
     .hero-body strong { color: rgba(240,244,255,0.95); font-weight: 400; }
-
-    /* ── FORM AREA ── */
     .form-area { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
     .form-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
     .form-subtitle { font-size: 13px; color: var(--muted); margin-bottom: 2rem; }
-
     .card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
     .sec-label { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; background: #e8f1fb; color: #185FA5; padding: 3px 10px; border-radius: 100px; margin-bottom: 10px; }
     .sec-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; padding-bottom: 10px; border-bottom: 0.5px solid var(--border); }
-
     .field { margin-bottom: 1.1rem; }
     .field label { display: block; font-size: 13px; color: #374151; margin-bottom: 6px; line-height: 1.5; }
-
-    /* Estilos para inputs de linha única (texto e data) */
-    .field input[type="text"],
-    .field input[type="date"] {
-      width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none; line-height: 1.6;
-    }
-    .field input[type="text"]:focus,
-    .field input[type="date"]:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(55,138,221,0.1); background: #fff; }
-
-    .field textarea {
-      width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none; resize: vertical; min-height: 82px; line-height: 1.6;
-    }
+    .field input[type="text"], .field input[type="date"] { width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none; line-height: 1.6; }
+    .field input[type="text"]:focus, .field input[type="date"]:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(55,138,221,0.1); background: #fff; }
+    .field textarea { width: 100%; padding: 9px 13px; font-size: 13px; font-family: 'DM Sans', sans-serif; background: #fafbfc; color: var(--text); border: 0.5px solid #d1d5db; border-radius: 8px; outline: none; resize: vertical; min-height: 82px; line-height: 1.6; }
     .field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(55,138,221,0.1); background: #fff; }
-
-    .btn-submit {
-      display: block; width: 100%; padding: 14px; font-size: 15px; font-family: 'Syne', sans-serif; font-weight: 700; color: #fff; background: var(--blue); border: none; border-radius: 10px; cursor: pointer; text-align: center; margin-top: 2rem; transition: background 0.2s;
-    }
+    .btn-submit { display: block; width: 100%; padding: 14px; font-size: 15px; font-family: 'Syne', sans-serif; font-weight: 700; color: #fff; background: var(--blue); border: none; border-radius: 10px; cursor: pointer; text-align: center; margin-top: 2rem; transition: background 0.2s; }
     .btn-submit:hover { background: #2672be; }
-
     .footer { text-align: center; font-size: 11px; color: #c0c4cc; padding-top: 2rem; border-top: 0.5px solid var(--border); margin-top: 2rem; }
   </style>
 </head>
@@ -123,8 +62,8 @@
     <p class="hero-sub">Estudante &nbsp;·&nbsp; <strong>PUC Minas</strong> &nbsp;·&nbsp; Belo Horizonte</p>
     <div class="hero-divider"></div>
     <p class="hero-body">
-      Olá! Sou estudante do <strong>1º período de Ciência da Computação</strong> e venho me interessando pela área de <strong>cloud computing</strong>.<br><br>
-      Como parte de um trabalho acadêmico, estou realizando uma entrevista para entender as competências mais valorizadas do mercado. Obrigado pela sua contribuição!
+      Olá! Sou estudante do <strong>1º período de Ciência da Computação</strong> e tenho grande interesse na área de <strong>Cloud Computing</strong>.<br><br>
+      Como parte de um trabalho acadêmico, estou realizando uma pesquisa para compreender melhor o mercado, incluindo o <strong>perfil</strong>, as <strong>competências mais valorizadas</strong> e a <strong>rotina de profissionais que atuam com Cloud</strong>. Sua contribuição será muito importante para enriquecer esse estudo. Muito obrigado pela sua participação!
     </p>
   </div>
 </header>
@@ -147,35 +86,34 @@
       <span class="sec-label">Bloco 1</span>
       <div class="sec-title">Trajetória e área de atuação</div>
       <div class="field"><label>1. Como você chegou até a área de cloud?</label><textarea name="pergunta_1" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>2. Pode descrever como é um dia típico na sua função?</label><textarea name="pergunta_2" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>3. Você trabalha mais com infraestrutura, desenvolvimento ou segurança?</label><textarea name="pergunta_3" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>2. No contexto de Cloud, qual é a sua principal área de atuação (Infraestrutura, Desenvolvimento, Segurança ou outra)? Poderia descrever como é um dia típico em sua função?</label><textarea name="pergunta_2" placeholder="Resposta…"></textarea></div>
     </div>
 
     <div class="card">
       <span class="sec-label">Bloco 2</span>
       <div class="sec-title">Desafios do trabalho</div>
-      <div class="field"><label>4. Quais são os maiores desafios técnicos do dia a dia?</label><textarea name="pergunta_4" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>5. E os desafios não técnicos (comunicação, gestão)?</label><textarea name="pergunta_5" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>6. Como você lida com incidentes e falhas em produção?</label><textarea name="pergunta_6" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>3. Quais são os maiores desafios técnicos do dia a dia?</label><textarea name="pergunta_3" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>4. E os desafios não técnicos (comunicação, gestão)?</label><textarea name="pergunta_4" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>5. Como você lida com incidentes e falhas em produção?</label><textarea name="pergunta_5" placeholder="Resposta…"></textarea></div>
     </div>
 
     <div class="card">
       <span class="sec-label">Bloco 3</span>
       <div class="sec-title">Competências e mercado</div>
-      <div class="field"><label>7. Quais habilidades técnicas considera mais valiosas hoje?</label><textarea name="pergunta_7" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>8. Quais provedores de cloud (AWS, Azure, GCP, etc.) você utiliza mais na sua rotina e por quê?</label><textarea name="pergunta_8" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>9. Certificações importam? Quais recomenda?</label><textarea name="pergunta_9" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>10. Quais soft skills fazem diferença real?</label><textarea name="pergunta_10" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>11. O que o mercado mais cobra agora?</label><textarea name="pergunta_11" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>6. Quais habilidades técnicas considera mais valiosas hoje?</label><textarea name="pergunta_6" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>7. Quais provedores de cloud (AWS, Azure, GCP, etc.) você utiliza mais na sua rotina e por quê?</label><textarea name="pergunta_7" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>8. Certificações importam? Quais recomenda?</label><textarea name="pergunta_8" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>9. Quais soft skills fazem diferença real?</label><textarea name="pergunta_9" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>10. O que o mercado mais cobra agora?</label><textarea name="pergunta_10" placeholder="Resposta…"></textarea></div>
     </div>
 
     <div class="card">
       <span class="sec-label">Bloco 4</span>
       <div class="sec-title">Futuro e conselhos</div>
-      <div class="field"><label>12. De que maneira ferramentas de Inteligência Artificial fazem parte do seu dia a dia profissional?</label><textarea name="pergunta_12" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>13. Qual futuro você prevê para a área de cloud computing e como você acha que a IA vai impactar esse cenário?</label><textarea name="pergunta_13" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>14. Se pudesse voltar ao início da carreira, o que faria diferente?</label><textarea name="pergunta_14" placeholder="Resposta…"></textarea></div>
-      <div class="field"><label>15. Que conselho daria para um estudante de Ciência da Computação?</label><textarea name="pergunta_15" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>11. De que maneira ferramentas de Inteligência Artificial fazem parte do seu dia a dia profissional?</label><textarea name="pergunta_11" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>12. Qual futuro você prevê para a área de cloud computing e como você acha que a IA vai impactar esse cenário?</label><textarea name="pergunta_12" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>13. Se pudesse voltar ao início da carreira, o que faria diferente?</label><textarea name="pergunta_13" placeholder="Resposta…"></textarea></div>
+      <div class="field"><label>14. Que conselho daria para um estudante de Ciência da Computação?</label><textarea name="pergunta_14" placeholder="Resposta…"></textarea></div>
     </div>
 
     <button type="submit" class="btn-submit">Enviar Respostas para o Lucas</button>
