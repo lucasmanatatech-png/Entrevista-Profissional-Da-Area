@@ -40,7 +40,6 @@ O objetivo principal da página é fornecer uma interface limpa, moderna e diret
 * **Lucas Manata**
 * Estudante do 1º Período de Ciência da Computação
 * **PUC Minas** — Belo Horizonte / MG
-* *Prazo de entrega do trabalho acadêmico: 21 de Maio*
 
 ---
 
